@@ -1,0 +1,1 @@
+Contains some temp files and helper scripts to generate the `*.inc` files. Most import script is `mktclstub.tcl`. 
