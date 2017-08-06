@@ -1,6 +1,6 @@
 #!/usr/bin/tclsh
 puts [pwd]
-if {$tcl_platform(platform) eq "winwdows"} {
+if {$tcl_platform(platform) eq "windows"} {
   load [file join [pwd] tclsampleext.dll]
 } else {
   load [file join [pwd] libtclsampleext.so]
