@@ -16,9 +16,13 @@ type
   PMailingListRecord = ^TMailingListRecord;
 
   procedure Square_Del_Cmd(clientData: ClientData); cdecl;
+  var
+    PML : PMailingListRecord;
+
   begin
-    WriteLn('Clearing Square clientData which had firstname: ' + PMailingListRecord(clientData)^.FirstName);
-    Dispose(PMailingListRecord(clientData));
+    PML:=PMailingListRecord(clientData);
+    WriteLn('Clearing Square clientData which had firstname: ' + PML^.FirstName);
+    Dispose(PML);
   end;
 
   function Square_Cmd(clientData: ClientData; interp: PTcl_Interp;
