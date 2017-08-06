@@ -23,18 +23,22 @@ const
   TCL_ERROR = 1;
 
 type
+  { Define all the Tcl standard types }
   {$INCLUDE tcltypes.inc}
+  { Define all the stub function types }
   {$INCLUDE stubtypes.inc}
 
   TclStubs = record
     magic: integer;
     hooks: Pointer;
+    { Define all the stubs fields }
     {$INCLUDE stubfields.inc}
   end;
 
   function Tcl_InitStubs(interp: PTcl_Interp; version: PChar; exact: cint): PChar;
 
 var
+  { Define all the function variables }
   {$INCLUDE stubvars.inc}
 
 implementation
@@ -46,6 +50,7 @@ var
 
   begin
        Result:=tclInitStubs(interp,version,exact);
+       { Initialize all the function variables }
        {$INCLUDE stubinit.inc}
   end;
 end.
