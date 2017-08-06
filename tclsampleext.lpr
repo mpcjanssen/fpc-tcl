@@ -47,7 +47,7 @@ type
   var
     ptr: PMailingListRecord;
   begin
-    ptr := New(PMailingListRecord);
+    New(ptr);
     ptr^.FirstName := 'Mark';
     Tcl_InitStubs(interp, '8.5', 0);
     Tcl_PkgProvideEx(interp, 'test', '0.1', nil);
