@@ -1,7 +1,13 @@
 unit tcl;
 
 {$mode objfpc}{$H+}
-{$linklib libtclstub.a}
+{$IFDEF UNIX}
+{$linklib libtclstub.unix.a}
+{$ENDIF}
+
+{$IFDEF WINDOWS}
+{$linklib libtclstub.win.a}
+{$ENDIF}
 
 interface
 
