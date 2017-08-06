@@ -24,6 +24,9 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+        <HostApplicationFilename Value="C:\Bin\tclkitsh.exe"/>
+        <CommandLineParams Value="testsample.tcl"/>
+        <WorkingDirectory Value="C:\Users\Mark\Documents\Src\fpc-tcl"/>
       </local>
     </RunParams>
     <Units Count="2">

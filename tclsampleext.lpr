@@ -20,6 +20,7 @@ begin
         Tcl_WrongNumArgs(interp, 1, objv, 'value');
         Exit(TCL_ERROR);
     end;
+    WriteLn('objv[1]:' + Tcl_GetString(objv[1]));
     if Tcl_GetIntFromObj(interp, objv[1], @i) <> TCL_OK then
     begin
         Exit(TCL_ERROR);
