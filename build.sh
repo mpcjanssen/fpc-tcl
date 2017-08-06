@@ -1,1 +1,1 @@
-fpc tclsampleext.lpr
+fpc -Fufpctcl tclsampleext.lpr

@@ -1,5 +1,5 @@
 { Basic Tcl API types. For now most types are assumed to be opaque (Pointer).
-  For the callback ...Proc types this is most likely wrong }
+  TODO: Update this as needed }
 
 ClientData = Pointer;
 Tcl_ArgvInfo = record
