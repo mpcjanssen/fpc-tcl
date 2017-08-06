@@ -1,6 +1,7 @@
 library tclsampleext;
 
 {$mode objfpc}{$H+}
+{$PACKRECORDS C}
 
 uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   cthreads, {$ENDIF} {$ENDIF}

@@ -2,6 +2,7 @@ unit tcl;
 
 {$mode objfpc}{$H+}
 {$linklib libtclstub.a}
+{$PACKRECORDS C}
 
 interface
 
