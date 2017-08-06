@@ -2,4 +2,5 @@ backup/
 *.dll
 *.ppu
 *.o
+*.so
 lib/
