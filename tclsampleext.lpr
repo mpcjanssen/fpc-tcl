@@ -45,13 +45,13 @@ type
 
   function Tclsampleext_Init(interp: PTcl_Interp): cint; cdecl;
   var
-    ptr: PMailingListRecord;
+    clientData: PMailingListRecord;
   begin
-    New(ptr);
-    ptr^.FirstName := 'Mark';
+    New(clientData);
+    clientData^.FirstName := 'Mark';
     Tcl_InitStubs(interp, '8.5', 0);
     Tcl_PkgProvideEx(interp, 'test', '0.1', nil);
-    Tcl_CreateObjCommand(interp, 'square', @Square_Cmd, ptr, @Square_Del_Cmd);
+    Tcl_CreateObjCommand(interp, 'square', @Square_Cmd, clientData, @Square_Del_Cmd);
     Result := TCL_OK;
   end;
 
