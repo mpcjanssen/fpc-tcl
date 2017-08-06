@@ -8,9 +8,8 @@
       <Unit0>
         <Filename Value="tclsampleext.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="14"/>
-        <CursorPos X="22" Y="18"/>
+        <CursorPos X="21" Y="28"/>
         <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -24,10 +23,9 @@
       </Unit1>
       <Unit2>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\rtl\inc\ctypes.pp"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="217"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\rtl\inc\systemh.inc"/>
@@ -39,14 +37,15 @@
       <Unit4>
         <Filename Value="stubfields.inc"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="548"/>
+        <TopLine Value="518"/>
         <CursorPos X="22" Y="189"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="stubtypes.inc"/>
-        <EditorIndex Value="5"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="7" Y="56"/>
         <UsageCount Value="13"/>
         <Loaded Value="True"/>
@@ -54,7 +53,6 @@
       <Unit6>
         <Filename Value="stubvars.inc"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="41"/>
         <CursorPos X="20" Y="53"/>
         <UsageCount Value="12"/>
         <Loaded Value="True"/>
@@ -74,7 +72,7 @@
       </Unit8>
       <Unit9>
         <Filename Value="tcltypes.inc"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="89"/>
         <CursorPos X="2" Y="105"/>
         <UsageCount Value="10"/>

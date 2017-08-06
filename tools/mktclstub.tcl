@@ -77,18 +77,6 @@ proc c2pas {type} {
   if {[string index $type end] eq "*"} {
     set type P[lindex $type 0]
   }
-  if {([string match PTcl_* $type] || [string match PPTcl_* $type]) 
-      && $type ni $::includedPointers } {
-    puts "Adding pointer type $type"
-    puts $::st "$type = ^[string range $type 1 end];"
-    lappend ::includedPointers $type
-  }
-  if {[string match Tcl_* $type]} {
-    puts $::so "$type = Pointer;"
-  }
-  if {[string match PTcl_* $type]} {
-    puts $::so "[string range $type 1 end ] = Pointer;"
-  }
   return $type
 }
 
@@ -124,12 +112,6 @@ proc pascalType {ret arglist} {
     if {[string range $name end-1 end] eq {[]}} {
       set name [string range $name 0 end-2]
       set type P$type
-      if {([string match PTcl_* $type] || [string match PPTcl_* $type]) 
-          && $type ni $::includedPointers } {
-        puts "Adding pointer type $type"
-        puts $::st "$type = ^[string range $type 1 end];"
-        lappend ::includedPointers $type
-      }
     }
     lappend pascalArgs "$name: $type"
 
@@ -219,12 +201,10 @@ proc getUniqueTypes {namesTypes} {
 }
 
 set last -1
-set includedPointers {}
-set sf [open "stubfields.inc" w]
-set st [open "stubtypes.inc" w]
-set si [open "stubinit.inc" w]
-set sv [open "stubvars.inc" w]
-set so [open "opaque_types.txt" w]
+set sf [open "gen/stubfields.inc" w]
+set st [open "gen/stubtypes.inc" w]
+set si [open "gen/stubinit.inc" w]
+set sv [open "gen/stubvars.inc" w]
 
 # analyse and transform
 #
@@ -235,4 +215,4 @@ close $sf
 close $st
 close $si
 close $sv
-close $so
+

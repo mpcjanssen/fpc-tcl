@@ -25,7 +25,7 @@ begin
         Exit(TCL_ERROR);
     end;
     Tcl_SetObjResult(interp, Tcl_NewIntObj(i*i));
-    Result := 0;
+    Result := TCL_OK;
 end;
 
   function Tclsampleext_Init(interp: PTcl_Interp): cint; cdecl;

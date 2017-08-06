@@ -7,7 +7,6 @@ TFRealloc = function(ptr: Pchar; size: longint):Pchar; cdecl;
 TFDbCkalloc = function(size: longint; fileName: Pchar; line: cint):Pchar; cdecl;
 TFDbCkfree = procedure(ptr: Pchar; fileName: Pchar; line: cint); cdecl;
 TFDbCkrealloc = function(ptr: Pchar; size: longint; fileName: Pchar; line: cint):Pchar; cdecl;
-PTcl_FileProc = ^Tcl_FileProc;
 TFCreateFileHandler = procedure(fd: cint; mask: cint; proc: PTcl_FileProc; clientData: ClientData); cdecl;
 TFDeleteFileHandler = procedure(fd: cint); cdecl;
 PTcl_Time = ^Tcl_Time;
