@@ -18,10 +18,10 @@ type
 
   procedure Square_Del_Cmd(clientData: ClientData); cdecl;
   var
-    PML : PMailingListRecord;
+    PML: PMailingListRecord;
 
   begin
-    PML:=PMailingListRecord(clientData);
+    PML := PMailingListRecord(clientData);
     WriteLn('Clearing Square clientData which had firstname: ' + PML^.FirstName);
     Dispose(PML);
   end;
@@ -29,7 +29,7 @@ type
   function Square_Cmd(clientData: ClientData; interp: PTcl_Interp;
     objc: cint; objv: PPTcl_Obj): cint; cdecl;
   var
-    i: cint;
+    i:  cint;
     ml: TMailingListRecord;
   begin
     ml := PMailingListRecord(clientData)^;
