@@ -29,15 +29,11 @@
         <WorkingDirectory Value="C:\Users\Mark\Documents\Src\fpc-tcl"/>
       </local>
     </RunParams>
-    <Units Count="2">
+    <Units Count="1">
       <Unit0>
         <Filename Value="tclsampleext.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
-      <Unit1>
-        <Filename Value="tcl.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit1>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -48,6 +44,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="fpctcl"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <CodeGeneration>
