@@ -1,7 +1,10 @@
 library tclsampleext;
 
 {$mode objfpc}{$H+}
-{$PACKRECORDS C}
+{$packrecords C}
+
+{ Strings are UTF8 by default }
+{$codepage utf8}
 
 uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   cthreads, {$ENDIF} {$ENDIF}
@@ -51,12 +54,19 @@ type
   function Tclsampleext_Init(interp: PTcl_Interp): cint; cdecl;
   var
     clientData: PMailingListRecord;
+    VarValue:   PChar;
   begin
+
     New(clientData);
     clientData^.FirstName := 'Mark';
     Tcl_InitStubs(interp, '8.5', 0);
     Tcl_PkgProvideEx(interp, 'test', '0.1', nil);
     Tcl_CreateObjCommand(interp, 'square', @Square_Cmd, clientData, @Square_Del_Cmd);
+    Tcl_Eval(interp, 'set a "\u0e01\u0150\u0104" ; puts $a');
+    VarValue := Tcl_GetVar(interp, 'a', TCL_GLOBAL_ONLY);
+    Tcl_SetVar(interp, 'b', VarValue, TCL_GLOBAL_ONLY);
+    Tcl_Eval(interp, 'puts "Via Tcl: $b"');
+    WriteLn(Concat('And via Pascal: ' , VarValue));
     Result := TCL_OK;
   end;
 

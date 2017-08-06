@@ -21,6 +21,7 @@ uses {$IFDEF UNIX} {$IFDEF UseCThreads}
 const
   TCL_OK = 0;
   TCL_ERROR = 1;
+  TCL_GLOBAL_ONLY = 1;
 
 type
   { Define all the Tcl standard types }
