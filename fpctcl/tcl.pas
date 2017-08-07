@@ -18,10 +18,8 @@ uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   SysUtils,
   ctypes;
 
-const
-  TCL_OK = 0;
-  TCL_ERROR = 1;
-  TCL_GLOBAL_ONLY = 1;
+{ Include Tcl constants }
+{$INCLUDE tclconstants.inc}
 
 type
   { Define all the Tcl standard types }
@@ -36,7 +34,7 @@ type
     {$INCLUDE stubfields.inc}
   end;
 
-  function Tcl_InitStubs(interp: PTcl_Interp; version: PChar; exact: cint): PChar;
+function Tcl_InitStubs(interp: PTcl_Interp; version: PChar; exact: cint): PChar;
 
 var
   { Define all the function variables }
@@ -46,13 +44,15 @@ implementation
 
 var
   tclStubsPtr : PTclStubs; cvar; external;
-  function tclInitStubs(interp: PTcl_Interp; version: PChar; exact: cint): PChar;  cdecl; external name 'Tcl_InitStubs';
-  function Tcl_InitStubs(interp: PTcl_Interp; version: PChar; exact: cint): PChar;
+function tclInitStubs(interp: PTcl_Interp; version: PChar; exact: cint): PChar;
+  cdecl; external Name 'Tcl_InitStubs';
 
-  begin
-       Result:=tclInitStubs(interp,version,exact);
-       { Initialize all the function variables }
-       {$INCLUDE stubinit.inc}
-  end;
+function Tcl_InitStubs(interp: PTcl_Interp; version: PChar; exact: cint): PChar;
+
+begin
+  Result := tclInitStubs(interp, version, exact);
+  { Initialize all the function variables }
+  {$INCLUDE stubinit.inc}
+end;
+
 end.
-
