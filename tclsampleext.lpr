@@ -11,6 +11,8 @@ uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   Classes,
   SysUtils,
   ctypes,
+  LazUTF8,
+
   tcl;
 
 type
@@ -55,6 +57,7 @@ type
   var
     clientData: PMailingListRecord;
     VarValue:   PChar;
+    VarString: string;
   begin
 
     New(clientData);
@@ -66,7 +69,9 @@ type
     VarValue := Tcl_GetVar(interp, 'a', TCL_GLOBAL_ONLY);
     Tcl_SetVar(interp, 'b', VarValue, TCL_GLOBAL_ONLY);
     Tcl_Eval(interp, 'puts "Via Tcl: $b"');
-    WriteLn(Concat('And via Pascal: ' , VarValue));
+    VarString := StrPas(VarValue);
+    WriteLn(Concat('And via Pascal: ' , VarString));
+
     Result := TCL_OK;
   end;
 
