@@ -2,6 +2,8 @@
 puts [pwd]
 if {$tcl_platform(platform) eq "windows"} {
   load [file join [pwd] tclsampleext.dll]
+} elseif {$tcl_platform(os) eq "Darwin"} {
+  load [file join [pwd] libtclsampleext.dylib]
 } else {
   load [file join [pwd] libtclsampleext.so]
 }

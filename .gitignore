@@ -3,4 +3,5 @@ backup/
 *.ppu
 *.o
 *.so
+*.dylib
 lib/

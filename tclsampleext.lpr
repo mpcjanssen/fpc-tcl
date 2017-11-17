@@ -11,7 +11,6 @@ uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   Classes,
   SysUtils,
   ctypes,
-  LazUTF8,
 
   tcl;
 

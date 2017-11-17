@@ -3,7 +3,11 @@ unit tcl;
 {$mode objfpc}{$H+}
 {$PACKRECORDS C}
 {$IFDEF UNIX}
+{$IFDEF Darwin}
+{$linklib libtclstub.macos.a}
+{$ELSE}
 {$linklib libtclstub.unix.a}
+{$ENDIF}
 {$ENDIF}
 
 {$IFDEF WINDOWS}
