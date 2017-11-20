@@ -4,7 +4,11 @@ unit tcl;
 {$PACKRECORDS C}
 {$IFDEF UNIX}
 {$IFDEF Darwin}
+{$IFDEF CPU64}
 {$linklib libtclstub.macos.a}
+{$ELSE}
+{$linklib libtclstub32.macos.a}
+{$ENDIF}
 {$ELSE}
 {$linklib libtclstub.unix.a}
 {$ENDIF}
